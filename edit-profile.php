@@ -6,6 +6,7 @@ if (strlen($_SESSION['id']==0)) {
 //Code for Updation 
 if(isset($_POST['update']))
 {
+  //update your first name last name and contact//
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
     $contact=$_POST['contact'];
@@ -55,6 +56,7 @@ while($result=mysqli_fetch_array($query))
                                 <table class="table table-bordered">
                                    <tr>
                                     <th>First Name</th>
+                                     //change the old  firstname in to upadate the value//
                                        <td><input class="form-control" id="fname" name="fname" type="text" value="<?php echo $result['fname'];?>" required /></td>
                                    </tr>
                                    <tr>
@@ -76,6 +78,7 @@ while($result=mysqli_fetch_array($query))
                                        <td colspan="3"><?php echo $result['posting_date'];?></td>
                                    </tr>
                                    <tr>
+                                     //in this updation for submit  button  on the center//
                                        <td colspan="4" style="text-align:center ;"><button type="submit" class="btn btn-primary btn-block" name="update">Update</button></td>
 
                                    </tr>
