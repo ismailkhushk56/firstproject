@@ -11,10 +11,12 @@ if(isset($_POST['send'])){
 
 $femail=$_POST['femail'];
 
+  //in mysql query select email fnmae  to recover the account//
 $row1=mysqli_query($con,"select email,password,fname from users where email='$femail'");
 $row2=mysqli_fetch_array($row1);
 if($row2>0)
 {
+  //first select email then firstname password //
 $toemail = $row2['email'];
 $fname = $row2['fname'];
 $subject = "Information about your password";
@@ -36,15 +38,20 @@ $bodyContent = 'Dear'." ".$fname;
 $bodyContent .='<p>'.$message.'</p>';
 $mail->Body = $bodyContent;
 if(!$mail->send()) {
+  
+  //if the message not send occur alert //
 echo  "<script>alert('Message could not be sent');</script>";
 echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
+  
+  //if the message oocur its mean passworf changed sussfully//
    echo  "<script>alert('Your Password has been sent Successfully');</script>";
 }
 
 }
 else
 {
+  //in this if put any type email that are not registered message print alert//
 echo "<script>alert('Email not register with us');</script>";   
 }
 }
@@ -98,6 +105,7 @@ echo "<script>alert('Email not register with us');</script>";
                                     </div>
                                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="signup.php">Need an account? Sign up!</a></div>
+                                      //first sigup to make a account after bake to home page to sigin in the page//
                         <div class="small"><a href="index.php">Back to Home</a></div>
                                     </div>
                                 </div>
