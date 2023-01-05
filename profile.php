@@ -31,10 +31,13 @@ $userid=$_SESSION['id'];
 $query=mysqli_query($con,"select * from users where id='$userid'");
 while($result=mysqli_fetch_array($query))
 {?>
+                      
+                      //in the first make profile//
                         <h1 class="mt-4"><?php echo $result['fname'];?>'s Profile</h1>
                         <div class="card mb-4">
                      
                             <div class="card-body">
+                             // after it will be changed or upadate//
                                 <a href="edit-profile.php">Edit</a>
                                 <table class="table table-bordered">
                                    <tr>
