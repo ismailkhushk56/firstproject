@@ -14,6 +14,8 @@ if (strlen($_SESSION['id']==0)) {
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard | Registration and Login System</title>
+      
+      //after sign in the page come to welcome page //
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
