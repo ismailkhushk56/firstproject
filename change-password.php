@@ -14,12 +14,15 @@ $num=mysqli_fetch_array($sql);
 if($num>0)
 {
 $userid=$_SESSION['id'];
+  //"mysql query new password where password new is"//
 $ret=mysqli_query($con,"update users set password='$newpassword' where id='$userid'");
+  //"message occur password changed"//
 echo "<script>alert('Password Changed Successfully !!');</script>";
 echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
 }
 else
 {
+ //" if old password not match message occur password not match"//
 echo "<script>alert('Old Password not match !!');</script>";
 echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
 }
@@ -44,6 +47,7 @@ function valid()
 {
 if(document.changepassword.newpassword.value!= document.changepassword.confirmpassword.value)
 {
+  //"alert message conformation and new password not match"//
 alert("Password and Confirm Password Field do not match  !!");
 document.changepassword.confirmpassword.focus();
 return false;
@@ -64,6 +68,7 @@ return true;
 
                         <h1 class="mt-4">Change Password</h1>
                         <div class="card mb-4">
+                          //"in this password changed submit button click"//
                      <form method="post" name="changepassword" onSubmit="return valid();">
                             <div class="card-body">
                                 <table class="table table-bordered">
@@ -81,6 +86,7 @@ return true;
                                    </tr>
                   
                                    <tr>
+                                     //"in center submit button update your password"//
                                        <td colspan="4" style="text-align:center ;"><button type="submit" class="btn btn-primary btn-block" name="update">Change</button></td>
 
                                    </tr>
