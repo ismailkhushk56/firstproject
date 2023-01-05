@@ -10,14 +10,16 @@ $ret= mysqli_query($con,"SELECT id,fname FROM users WHERE email='$useremail' and
 $num=mysqli_fetch_array($ret);
 if($num>0)
 {
-
+//session where id number is id//
 $_SESSION['id']=$num['id'];
+    //session where first name number is fname//
 $_SESSION['name']=$num['fname'];
 header("location:welcome.php");
 
 }
 else
 {
+   // if the username and password not right message occur is invalid//
 echo "<script>alert('Invalid username or password');</script>";
 }
 }
@@ -54,23 +56,27 @@ echo "<script>alert('Invalid username or password');</script>";
                                             
 <div class="form-floating mb-3">
 <input class="form-control" name="uemail" type="email" placeholder="name@example.com" required/>
+   // in this used email adress label //
 <label for="inputEmail">Email address</label>
 </div>
                                             
 
 <div class="form-floating mb-3">
 <input class="form-control" name="password" type="password" placeholder="Password" required />
+    //password label is used to password text//
 <label for="inputPassword">Password</label>
 </div>
 
 
 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
 <a class="small" href="password-recovery.php">Forgot Password?</a>
+   // if you are forget  your password for recover it //
 <button class="btn btn-primary" name="login" type="submit">Login</button>
 </div>
 </form>
 </div>
                                     <div class="card-footer text-center py-3">
+                                        //for every registration or account singup need to first make account//
                                         <div class="small"><a href="signup.php">Need an account? Sign up!</a></div>
                                           <div class="small"><a href="index.php">Back to Home</a></div>
                                     </div>
