@@ -72,6 +72,7 @@ return true;
 <div class="col-md-6">
 <div class="form-floating mb-3 mb-md-0">
 <input class="form-control" id="fname" name="fname" type="text" placeholder="Enter your first name" required />
+    //label as fname text fname//
 <label for="inputFirstName">First name</label>
 </div>
 </div>
@@ -87,6 +88,7 @@ return true;
 
 <div class="form-floating mb-3">
 <input class="form-control" id="email" name="email" type="email" placeholder="phpgurukulteam@gmail.com" required />
+    //label email text input email//
 <label for="inputEmail">Email address</label>
 </div>
  
@@ -117,6 +119,7 @@ return true;
                                             
 
 <div class="mt-4 mb-0">
+    //put all the information  then click submit button to create account//
 <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" name="submit">Create Account</button></div>
 </div>
                                         </form>
