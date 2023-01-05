@@ -13,12 +13,14 @@ $sql=mysqli_query($con,"select id from users where email='$email'");
 $row=mysqli_num_rows($sql);
 if($row>0)
 {
+    //some time we put emailid that are already registered  message print that try another account//
     echo "<script>alert('Email id already exist with another account. Please try with other email id');</script>";
 } else{
     $msg=mysqli_query($con,"insert into users(fname,lname,email,password,contactno) values('$fname','$lname','$email','$password','$contact')");
 
 if($msg)
 {
+   // we put all the information correctly message print registerted susssfull//
     echo "<script>alert('Registered successfully');</script>";
     echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
 }
@@ -38,6 +40,7 @@ if($msg)
   <script type="text/javascript">
 function checkpass()
 {
+   //  first signup page password set
 if(document.signup.password.value!=document.signup.confirmpassword.value)
 {
 alert(' Password and Confirm Password field does not match');
